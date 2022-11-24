@@ -456,12 +456,6 @@ const products = [
 
 function filterBasket(array) {
   array.sort((first, second) => first.id.localeCompare(second.id));
-  for (let i = 0, j = 1; i <= array.length - 1, j < array.length; i += 1, j += 1) {
-    if (array[i].id === array[j].id) {
-      array[i].qty += array[j].qty;
-      array.splice(j, 1);
-    }
-  }
 
   for (const unique of array) {
     if (
